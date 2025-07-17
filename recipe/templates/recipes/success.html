@@ -1,0 +1,11 @@
+{% block content %}
+<div style="max-width: 600px; margin: 100px auto; text-align: center; padding: 50px; border: 1px solid #e0e0e0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); font-family: Arial, sans-serif;">
+    <h1 style="color: #2e7d32; font-size: 2.5rem; margin-bottom: 20px;">✅ Success!</h1>
+    <p style="font-size: 1.2rem; color: #555;">
+        Your recipe book was successfully created.
+    </p>
+    <a href="{% url 'index' %}" style="display: inline-block; margin-top: 30px; padding: 10px 20px; background-color: #2e7d32; color: white; text-decoration: none; border-radius: 5px;">
+        Back to Home
+    </a>
+</div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% block content %}
+<div style="max-width: 600px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); font-family: Arial, sans-serif;">
+    <h1 style="text-align: center; color: #2c3e50; margin-bottom: 20px;">📝 Create New Recipe</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            {{ form.as_p }}
+            <button type="submit" style="background-color: #3498db; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
