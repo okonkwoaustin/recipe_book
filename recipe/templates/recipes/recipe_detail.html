@@ -1,0 +1,16 @@
+{% extends "recipes/base.html" %}
+
+{% block page_header %} <h2 style="color: #2980b9;"> {{ recipe.title }} </h2> {% endblock page_header %}
+
+{% block content %}
+<p>This recipe has a unique identity of {{ recipe.id }}.</p>
+<p><strong>Description:</strong> {{ recipe.description }}</p>
+<p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+<p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+<p><strong>Cooking Time:</strong> {{ recipe.cooking_time }} minutes</p>
+<p><strong>Servings:</strong> {{ recipe.servings }}</p>
+<!--<p><strong>Dish Type:</strong> {{ recipe.type }}</p> -->
+<p><strong>Created At:</strong> {{ recipe.created_at}}</p>
+
+
+{% endblock content %}
