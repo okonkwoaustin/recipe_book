@@ -21,6 +21,14 @@
         <h2 style="color: #2980b9;">
             <a style="text-decoration: none;" href="{% url 'recipe-detail' recipe.id %}">{{ recipe.title }}</a>
         </h2>
+        {% if recipe.image %}
+        <div style="display: flex; justify-content: center;">
+            <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}"
+                style="width: 100%; max-width: 400px; height: 250px; object-fit: cover; border-radius: 8px;">
+        </div>
+        {% endif %}
+
+
         <p><strong>Description:</strong> {{ recipe.description }}</p>
         <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
         <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>

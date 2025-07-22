@@ -12,4 +12,5 @@ class  RecipeForm(forms.ModelForm):
                     "cooking_time",
                     "servings",
                     "type",
+                    "image",
                ]

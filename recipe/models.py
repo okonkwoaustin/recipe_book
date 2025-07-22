@@ -21,6 +21,7 @@ class Recipe(models.Model):
     type = models.CharField(max_length=1, choices=DISH_TYPE, default=TYPE_MAIN_DISH)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to="recipe_images/", blank=True, null=True)
 
     def __str__(self):
         return self.title
