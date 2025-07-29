@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Recipe(models.Model):
     TYPE_MAIN_DISH = "M"
@@ -9,7 +10,7 @@ class Recipe(models.Model):
     DISH_TYPE = [
         (TYPE_MAIN_DISH, "Main Dish"),
         (TYPE_APPETIZER, "Appetizer"),
-        (TYPE_DESSERT, "Dessert"),        
+        (TYPE_DESSERT, "Dessert"),
     ]
 
     title = models.CharField(max_length=255)
@@ -25,6 +26,6 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     class Meta:
         ordering = ["-created_at"]

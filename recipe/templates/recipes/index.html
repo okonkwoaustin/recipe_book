@@ -9,12 +9,14 @@
 {% block content %}
 <section style="max-width: 600px; margin: 0 auto; text-align: left; font-family: Arial, sans-serif;">
     
+  {% if user.is_authenticated %}
     <div style="text-align: right; margin-bottom: 20px;">
         <a href="{% url 'create_recipe' %}" 
            style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px;">
             ➕ Create New Recipe
         </a>
-    </div>
+    </div>    
+  {% endif %}
 
     {% for recipe in recipes %}
     <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 20px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">

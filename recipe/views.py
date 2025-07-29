@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from . models import Recipe
-from . forms import RecipeForm
+from .models import Recipe
+from .forms import RecipeForm
 
 # Create your views here.
 
@@ -32,11 +32,10 @@ def create_recipe(request):
 def recipe_detail(request, recipe_id):
     """Detail view for a recipe"""
     recipe = Recipe.objects.get(id=recipe_id)
-    context = {
-        "recipe": recipe
-    }
+    context = {"recipe": recipe}
     template = "recipes/recipe_detail.html"
     return render(request, template, context)
+
 
 def update_recipe(request, pk):
     """Update view for a recipe"""
@@ -51,6 +50,7 @@ def update_recipe(request, pk):
         template = "recipes/update_recipe.html"
         context = {"form": form}
     return render(request, template, context)
+
 
 def delete_recipe(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk)
