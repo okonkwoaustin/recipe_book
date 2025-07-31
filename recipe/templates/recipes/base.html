@@ -39,6 +39,9 @@
         <li class="nav-item">
           <a class="nav-link active" href="{% url 'create_recipe' %}">New</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'my-recipes' %}">My Recipes</a>
+        </li>
         {% endif %}
       </ul>
 
@@ -46,10 +49,13 @@
     <ul class="navbar-nav">
   {% if user.is_authenticated %}
     <li class="nav-item">
-      <a class="nav-link disabled text-dark" href="#">👋 Hi, {{ user.username }}</a>
+      <a class="nav-link text-dark" href="{% url 'settings' %}">👋 Hi, {{ user.username }}</a>
     </li>
     <li class="nav-item">
-      <a class="btn btn-outline-danger btn-sm mx-1" href="{% url 'logout' %}">Logout</a>
+      <form method="post" action="{% url 'logout' %}" style="display:inline;">
+      {% csrf_token %}
+        <button type="submit" class="btn btn-outline-danger btn-sm">Logout</button>
+      </form>
     </li>
   {% else %}
     <li class="nav-item">

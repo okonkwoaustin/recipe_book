@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5", 
     # Local apps here
-    "recipe",
     "users",
+    "recipe",
 ]
 
 

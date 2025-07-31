@@ -1,0 +1,28 @@
+{% extends 'recipes/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm p-4">
+                <h2 class="text-center text-primary mb-4">⚙️ Settings</h2>
+                <hr>
+                
+                <p><strong>Username:</strong> {{ request.user.username }}</p>
+                <p><strong>Email:</strong> {{ request.user.email }}</p>
+                <p><strong>First name:</strong> {{ request.user.first_name }}</p>
+                <p><strong>Last name:</strong> {{ request.user.last_name }}</p>
+
+                <div class="d-grid gap-2 mt-4">
+                    <a href="" class="btn btn-warning">Change Password</a>
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger w-100">Logout</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
