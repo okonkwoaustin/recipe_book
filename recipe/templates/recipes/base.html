@@ -37,9 +37,6 @@
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'create_recipe' %}">New</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link active" href="{% url 'my-recipes' %}">My Recipes</a>
         </li>
         {% endif %}
@@ -49,7 +46,7 @@
     <ul class="navbar-nav">
   {% if user.is_authenticated %}
     <li class="nav-item">
-      <a class="nav-link text-dark" href="{% url 'settings' %}">👋 Hi, {{ user.username }}</a>
+      <a class="nav-link text-dark" href="{% url 'settings' %}">👋 Hi, {{ user.first_name }}</a>
     </li>
     <li class="nav-item">
       <form method="post" action="{% url 'logout' %}" style="display:inline;">
